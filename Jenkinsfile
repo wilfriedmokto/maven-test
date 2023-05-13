@@ -5,7 +5,7 @@ pipeline {
     }
     environment {
     registry = '502492557970.dkr.ecr.us-east-1.amazonaws.com/devops-terra'
-    registryCredential = 'aws-credentials'
+    registryCredential = 'ecr-user'
     dockerimage = ''
   }
     stages {
@@ -41,5 +41,4 @@ pipeline {
             }
         }  
     }
-}
 }
