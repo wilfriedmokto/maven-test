@@ -13,6 +13,7 @@ pipeline {
             steps{
                 git branch: 'main', url: 'https://github.com/wilfriedmokto/maven-test.git'
             }
+          }
         stage('Sonarqube scan') {
             steps {
              withSonarQubeEnv('sonar'){
@@ -20,7 +21,7 @@ pipeline {
              }
             }
         }    
-        }
+       
         stage('Code Build') {
             steps {
                 sh 'mvn clean install package'
